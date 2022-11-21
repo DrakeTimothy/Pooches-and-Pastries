@@ -3,13 +3,20 @@
     margin: 0;
 }
 
-.bodyhome {
+   .bodyhome {
     background-image: url(images/dog-licking.jpg);
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    opacity: .5;
     background-color: tan;
+}
+
+body {
+    background-color: crimson;
+}
+
+img {
+    opacity: .8;
 }
 
 
@@ -20,7 +27,11 @@ nav {
     text-align: center;
     font-weight: bold;
     font-family: "caveat", cursive;
-    margin-top: 25px;
+}
+
+.navcontainer {
+    display: flex;
+    justify-content: center;
 }
 
 a:link {
@@ -31,48 +42,57 @@ a:link {
 }
 
 a:hover {
-    color: white;
+    color:crimson;
 }
 
 a:visited {
     color: lightgray;
 }
 
-heading {
+h1 {
     color: white;
     text-align: center;
     font-size: 135px;
     font-family: "caveat", cursive;
     font-weight: bold;
-    text-shadow: 4px 4px maroon;
+    text-shadow: 5px 5px maroon;
     padding-left: 100px;
-    padding-top: 40px;
+    padding-bottom: 15px;
+    
+    
     
 }
 
 .motto {
     color: white;
     font-weight: bold;
-    text-shadow: 2px 2px maroon;
+    text-shadow: 5px 5px maroon;
     font-size: 60px;
     font-family: "caveat", cursive;
     padding-left: 25px;
-    padding-top: 50px;
+    padding-top: 60px;
 }
 
 footer {
-    position: fixed;
+    position: sticky;
     bottom: 0;
+    margin: auto;
     text-align: center;
     font-size: 28px;
     font-weight: bold;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
+    padding-top: 325px;
     font-family: "caveat", cursive;
 }
 
 .title {
-    color: maroon;
+    color: black;
     font-weight: bold;
     text-align: center;
+}
+
+.contact {
+    color: black;
+    font-weight: bold;
 }
 
