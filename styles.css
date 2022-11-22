@@ -1,17 +1,23 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
 
-.bodyhome {
-    background-image: url(images/dog-licking.jpg);
+body{
+    
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    opacity: .5;
     background-color: tan;
 }
 
+.bodyhome {
+    background-image: url(images/dog-licking.jpg);
+}
+
+.bodymenu {
+    background-image: url(pexels-rachel-claire-4857715.jpg);
+}
 
 nav {
     height: 50px;
@@ -20,7 +26,12 @@ nav {
     text-align: center;
     font-weight: bold;
     font-family: "caveat", cursive;
-    margin-top: 25px;
+    background: linear-gradient(to right, tan, tan, black);
+    -webkit-text-stroke: 1px;
+}
+
+.navcontainer{
+    padding: 10px;
 }
 
 a:link {
@@ -47,7 +58,7 @@ heading {
     text-shadow: 4px 4px maroon;
     padding-left: 100px;
     padding-top: 40px;
-    
+    opacity: .5;
 }
 
 .motto {
@@ -58,16 +69,20 @@ heading {
     font-family: "caveat", cursive;
     padding-left: 25px;
     padding-top: 50px;
+    opacity: .5;
 }
 
 footer {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     text-align: center;
     font-size: 28px;
     font-weight: bold;
     padding-bottom: 20px;
     font-family: "caveat", cursive;
+    width: 100%;
+    background: linear-gradient(to right, black, tan, tan);
+    padding-top: 8px;
 }
 
 .title {
@@ -76,3 +91,99 @@ footer {
     text-align: center;
 }
 
+/* FLIP CARDS: NOTE - The flip cards are definitely glitchy. I had to make a ton of special adaptations to get them to work at all. When all is said and done, in order to prevent text from showing through the pictures from one side to the other, I had to add an opacity transition so that whichever side was away from the viewer would fade out. I tried for about 3 hours to fix it. Fail... */
+
+/* FLIP CARD EXAMPLE */
+
+/* This is the container the flip card is in. 
+The flip card image/background size must be made to match. Done inline in this case (see html file where the image is posted).*/
+.flip-card-container {
+    position: relative;
+    /*to the body.*/
+    width: 300px;
+    /*of the container*/
+    height: 300px;
+    /*of the container*/
+    perspective: 1000px;
+    /*Tells you just how much the card will stretch perspective when flipping. (It can look like it's about to slap you if you set this really low, but if the cursor touches it at that point, it will glitch.) If we remove this, the card will still flip, just without the 3D perspective stuff.*/
+    float: left;
+}
+
+/* Positioning front and back of the cards */
+.flip-card-inner {
+    position: relative;
+    /*Establishing it as relative to the parent 'flip-card-container'.*/
+    width: 100%;
+    /*relative to the parent, based on the position attribute.*/
+    height: 100%;
+    /*relative to the parent, based on the position attribute.*/
+    text-align: center;
+    /*relative to the parent, based on the position attribute.*/
+    transition: 1s;
+    /*How long it takes the card to flip*/
+    transform-style: preserve-3d;
+    /*Shows a 3d style flip with perspective.*/
+    transform: scale(1);
+    /*Adds a scaling effect to the flip (making it go from big to smaller or reverse, depending on the size of the scale).*/
+}
+
+/* This is the "FLIP" command. This makes it so that, when the flip-card class is hovered over, the card rotates 180 degrees on it's Y axis. (Y in css terms, which is exactly the opposite of every other convention, both in 3D graphic creation and math. Sheesh.) */
+.flip-card-container:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+
+/* This is so that, if the picture doesn't show, the other side of the card will still function. */
+.flip-card-image p {
+    text-align: left;
+    margin: 5%;
+}
+
+/* This is so that, if the picture doesn't show, the other side of the card will still function. */
+.flip-card-image {
+    background-color: maroon;
+    color: rgb(255, 0, 0);
+}
+
+/* This is so that, if the picture doesn't show, the front of the card will still function.*/
+.flip-card-text {
+    transition: 1s;
+    /* So, the workaround for the glitch in flip cards is to add a transition to whichever element is to add a transition effect - one for when hovering, and one for when you're not. This makes it so that the attribute fades upon mouseover, and then fades back when you move your mouse off. See the .flip-card-text:hover css point below.*/
+    background: linear-gradient(to right, rgb(179, 133, 133), black);
+    color: rgb(255, 60, 0);
+    text-shadow: 1px 1px 2px white, -1px -1px 2px white;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    font-size: 1.25em;
+    font-family: Arial, Helvetica, sans-serif;
+    /* Supposedly this is for Safari. Firefox...is just a nightmare that refuses to play nice. */
+}
+
+.flip-card-text p{
+    font-size: 1.5em;
+}
+.flip-card-text:hover {
+    transition: 1s;
+    /* So, the workaround for the glitch in flip cards is to add a transition to whichever element is to add a transition effect - one for when hovering, and one for when you're not. This makes it so that the attribute fades upon mouseover, and then fades back when you move your mouse off.*/
+    opacity: 5%;
+}
+
+
+/* This positions the front and back inside the flip-card-inner class, which is inside the flip-card class. */
+.flip-card-text,
+.flip-card-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/*Currently, used to add a row of flippy flex boxes to our menu.*/
+.flex-flippy {
+    padding: 5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 20px 2.5%;
+}
