@@ -72,7 +72,12 @@ h4 {
 
 h2 {
     padding-bottom: 5px;
+    padding-top: 20px;
     text-shadow: 4px 4px black;
+}
+
+h3 {
+    text-shadow: 4px 4px crimson;
 }
 
 
@@ -125,6 +130,7 @@ h2 {
 .aboutphotos {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     border: 4px maroon solid;
     justify-content: space-around;
 }
