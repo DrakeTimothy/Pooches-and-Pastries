@@ -162,6 +162,7 @@ The flip card image/background size must be made to match. Done inline in this c
 .flip-card-text p{
     font-size: 1.5em;
 }
+
 .flip-card-text:hover {
     transition: 1s;
     /* So, the workaround for the glitch in flip cards is to add a transition to whichever element is to add a transition effect - one for when hovering, and one for when you're not. This makes it so that the attribute fades upon mouseover, and then fades back when you move your mouse off.*/
