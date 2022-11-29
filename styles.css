@@ -1,36 +1,51 @@
+/* z-index = 1 (11/28/22 1:17 pm) */
+/* Changes made 11/29/22 (TD): Due to google font "caveat" not loading as quickly as the rest of the page, the whole index.html page displayed with one font before snapping to 'caveat'. I found a similar font that is standard to Windows and used it instead to make it instantly available to the browser in all instances. This should (SHOULD) apply to all browsers, desktop, laptop, and phone. 
+
+Finally got the footer to stick to the bottom of the page by replacing "margin-bottom:0%;" with "bottom:0%;"
+
+Made the background pictures shrink and grow with page size, yes stay centered so the dog is always front-and-center. (This just "background-position:center;" combined with "height:100vh;".)*/
+
 * {
     padding: 0;
     margin: 0;
 }
 
 body{
-    
+    min-width: 396px; /* (TD 11/29) This makes it so the window never gets so narrow it cuts off the menu boxes. I kept it static for all pages.*/
+}
+.bodyhome {
     background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
     background-color: rgb(173, 150, 120);
+    height: 100%;
 }
 
-.bodyhome {
+.reveal {
     background-image: url(images/dog-licking.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    animation: tada 10s;
+    animation-iteration-count: 1;
 }
+
 
 .bodymenu {
     background-image: url(images/bulldog-donut.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
 }
 
-nav {
-    color: maroon;
+.navcontainer {
+    padding: 10px;
     font-size: 30px;
     text-align: center;
     font-weight: bold;
-    font-family: "caveat", cursive;
+    font-family: 'Ink Free', 'Bradley Hand ITC', Courier, monospace;
     background: linear-gradient(to right, tan, tan, black);
-    -webkit-text-stroke: 1px;
-}
-
-.navcontainer{
-    padding: 10px;
+    z-index: 1000;
 }
 
 a:link {
@@ -41,7 +56,7 @@ a:link {
 }
 
 a:hover {
-    color:crimson;
+    color: crimson;
 }
 
 a:visited {
@@ -52,7 +67,7 @@ h1 {
     color: white;
     text-align: center;
     font-size: 135px;
-    font-family: "caveat", cursive;
+    font-family: 'Ink Free', 'Bradley Hand ITC', Courier, monospace;
     font-weight: bold;
     text-shadow: 5px 5px maroon;
     padding-left: 100px;
@@ -60,12 +75,14 @@ h1 {
     opacity: .5;
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
     color: white;
 }
 
 h4 {
-    font-family: "caveat", cursive;
+    font-family: 'Ink Free', 'Bradley Hand ITC', Courier, monospace;
     font-size: 25px;
     text-shadow: 4px 4px black;
 }
@@ -86,7 +103,7 @@ h3 {
     font-weight: bold;
     text-shadow: 5px 5px maroon;
     font-size: 60px;
-    font-family: "caveat", cursive;
+    font-family: 'Ink Free', 'Bradley Hand ITC', Courier, monospace;
     padding-left: 25px;
     padding-top: 50px;
     opacity: .5;
@@ -117,7 +134,7 @@ h3 {
 }
 
 .abouttext {
-    font-family: "caveat", cursive;
+    font-family: 'Ink Free', 'Bradley Hand ITC', Courier, monospace;
     text-align: center;
     font-size: 28px;
     padding-left: 20px;
@@ -211,7 +228,7 @@ The flip card image/background size must be made to match. Done inline in this c
     /* Supposedly this is for Safari. Firefox...is just a nightmare that refuses to play nice. */
 }
 
-.flip-card-text p{
+.flip-card-text p {
     font-size: 1em;
 }
 
@@ -241,17 +258,31 @@ The flip card image/background size must be made to match. Done inline in this c
     gap: 20px 2.5%;
 }
 
+footer {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Ink Free', 'Bradley Hand ITC', Courier, monospace;
+    width: 100%;
+    background: linear-gradient(to right, black, tan, tan);
+    min-width: 396px;
+}
+
 .contactus {
     padding-top: 0px;
 }
 
 
-footer {
-    margin-top: 100vh;
-    text-align: center;
-    font-size: 28px;
-    font-weight: bold;
-    font-family: "caveat", cursive;
-    width: 100%;
-    background: linear-gradient(to right, black, tan, tan);
+
+
+@keyframes tada {
+    from {
+        opacity: 0;
     }
+
+    to {
+        opacity: 1;
+    }
+}
