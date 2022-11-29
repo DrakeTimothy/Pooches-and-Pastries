@@ -8,7 +8,7 @@ body{
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    background-color: tan;
+    background-color: rgb(173, 150, 120);
 }
 
 .bodyhome {
@@ -16,11 +16,10 @@ body{
 }
 
 .bodymenu {
-    background-image: url(pexels-rachel-claire-4857715.jpg);
+    background-image: url(images/bulldog-donut.jpg);
 }
 
 nav {
-    height: 50px;
     color: maroon;
     font-size: 30px;
     text-align: center;
@@ -42,29 +41,50 @@ a:link {
 }
 
 a:hover {
-    color: white;
+    color:crimson;
 }
 
 a:visited {
     color: lightgray;
 }
 
-heading {
+h1 {
     color: white;
     text-align: center;
     font-size: 135px;
     font-family: "caveat", cursive;
     font-weight: bold;
-    text-shadow: 4px 4px maroon;
+    text-shadow: 5px 5px maroon;
     padding-left: 100px;
     padding-top: 40px;
     opacity: .5;
 }
 
+h2, h3, h4 {
+    color: white;
+}
+
+h4 {
+    font-family: "caveat", cursive;
+    font-size: 25px;
+    text-shadow: 4px 4px black;
+}
+
+h2 {
+    padding-bottom: 5px;
+    padding-top: 20px;
+    text-shadow: 4px 4px black;
+}
+
+h3 {
+    text-shadow: 4px 4px crimson;
+}
+
+
 .motto {
     color: white;
     font-weight: bold;
-    text-shadow: 2px 2px maroon;
+    text-shadow: 5px 5px maroon;
     font-size: 60px;
     font-family: "caveat", cursive;
     padding-left: 25px;
@@ -72,24 +92,56 @@ heading {
     opacity: .5;
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
-    text-align: center;
-    font-size: 28px;
-    font-weight: bold;
-    padding-bottom: 20px;
-    font-family: "caveat", cursive;
-    width: 100%;
-    background: linear-gradient(to right, black, tan, tan);
-    padding-top: 8px;
-}
 
 .title {
-    color: maroon;
+    color: black;
     font-weight: bold;
     text-align: center;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
 }
+
+.aboutusheading {
+    font-size: 100px;
+}
+
+
+.aboutcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 4px maroon solid;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.abouttext {
+    font-family: "caveat", cursive;
+    text-align: center;
+    font-size: 28px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    color: crimson;
+    text-shadow: 1px 1px black;
+}
+
+.aboutphotos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 4px maroon solid;
+    justify-content: space-around;
+}
+
+section {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
 
 /* FLIP CARDS: NOTE - The flip cards are definitely glitchy. I had to make a ton of special adaptations to get them to work at all. When all is said and done, in order to prevent text from showing through the pictures from one side to the other, I had to add an opacity transition so that whichever side was away from the viewer would fade out. I tried for about 3 hours to fix it. Fail... */
 
@@ -154,13 +206,13 @@ The flip card image/background size must be made to match. Done inline in this c
     text-shadow: 1px 1px 2px white, -1px -1px 2px white;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    font-size: 1.25em;
+    font-size: 1em;
     font-family: Arial, Helvetica, sans-serif;
     /* Supposedly this is for Safari. Firefox...is just a nightmare that refuses to play nice. */
 }
 
 .flip-card-text p{
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 .flip-card-text:hover {
@@ -188,3 +240,18 @@ The flip card image/background size must be made to match. Done inline in this c
     align-items: stretch;
     gap: 20px 2.5%;
 }
+
+.contactus {
+    padding-top: 0px;
+}
+
+
+footer {
+    margin-top: 100vh;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: "caveat", cursive;
+    width: 100%;
+    background: linear-gradient(to right, black, tan, tan);
+    }
