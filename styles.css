@@ -39,6 +39,7 @@ body{
 }
 
 .navcontainer {
+    background-color: rgb(173, 150, 120);
     padding: 10px;
     font-size: 30px;
     text-align: center;
@@ -55,12 +56,12 @@ a:link {
     padding: 8px;
 }
 
-a:hover {
+a:visited {
     color: crimson;
 }
 
-a:visited {
-    color: lightgray;
+a:hover {
+    color: white;
 }
 
 h1 {
@@ -120,6 +121,7 @@ h3 {
 
 .aboutusheading {
     font-size: 100px;
+    color: black;
 }
 
 
@@ -130,6 +132,7 @@ h3 {
     border: 4px maroon solid;
     margin-left: 20px;
     margin-right: 20px;
+    background-color: rgb(173, 150, 120);
 }
 
 .abouttext {
