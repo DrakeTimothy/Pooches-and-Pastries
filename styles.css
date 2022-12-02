@@ -54,9 +54,8 @@ h1 {
     font-size: 135px;
     font-family: "caveat", cursive;
     font-weight: bold;
-    text-shadow: 5px 5px maroon;
+    text-shadow: 5px 5px crimson;
     padding-left: 100px;
-    padding-top: 40px;
     opacity: .5;
 }
 
@@ -84,11 +83,11 @@ h3 {
 .motto {
     color: white;
     font-weight: bold;
-    text-shadow: 5px 5px maroon;
+    text-shadow: 5px 5px crimson;
     font-size: 60px;
     font-family: "caveat", cursive;
     padding-left: 25px;
-    padding-top: 50px;
+    padding-top: 150px;
     opacity: .5;
 }
 
