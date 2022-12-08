@@ -5,9 +5,22 @@ Finally got the footer to stick to the bottom of the page by replacing "margin-b
 
 Made the background pictures shrink and grow with page size, yes stay centered so the dog is always front-and-center. (This just "background-position:center;" combined with "height:100vh;".)*/
 
+/* Changes made 12/8/22 (TD): Put "caveat" back from google fonts.
+
+Altered photo sizes in flex box "aboutphotos" so that they are all the same width in order to improve appearance on mobile."
+
+Added divider between human food and dog food (which...just sounds reasonable to me...)
+
+Created a second background to the menu page. Doggies first of course, but needed humans too.
+*/
+
 * {
     padding: 0;
     margin: 0;
+}
+
+.about_background {
+    background-image: linear-gradient(rgb(167, 100, 61),tan)
 }
 
 body{
@@ -19,23 +32,44 @@ body{
     height: 100%;
 }
 
-.reveal {
-    background-image: url(images/dog-licking.jpg);
+/* Hi Melissa. This class is what I created in order to get the first image to fade-in.*/
+.reveal { /* For index.html, not index2.html. See below explanation.*/
+    background-image: url(images/dog-licking.jpg); 
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 100vh;
-    animation: tada 10s;
-    animation-iteration-count: 1;
+    animation: tada 10s; /* I named the animation 'TADA', because...IT'S MAGIC! Anyhow, tada is the name of the variable, and I assigned it a 10 second reveal.*/
+    animation-iteration-count: 1; /* The animation only plays once, but since it plays every time you refresh the screen, I've gone ahead and added a second index.html to load in its place so people don't always have to wait for the animation. Now - that DOES mean any changes you make to one index must also be made to the other.*/
 }
 
+.reveal_no_anim {
+    background-image: url(images/dog-licking.jpg); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
 
-.bodymenu {
+/* Background for puppy parfet. */
+.bodymenu .flex-flippy1{
     background-image: url(images/bulldog-donut.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    height: 50vh;
+    height: max-content;
+}
+
+
+/* Needed a different background for human fare, so here 'tis! */
+.bodymenu .flex-flippy2{
+    background-image: url(pexels-nicole-michalou-5775050.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     height: 100vh;
+    height: max-content;
 }
 
 .navcontainer {
@@ -44,7 +78,7 @@ body{
     font-size: 30px;
     text-align: center;
     font-weight: bold;
-    font-family: 'Ink Free', 'Bradley Hand ITC', Courier, monospace;
+    font-family: 'Caveat', 'Bradley Hand ITC', Courier, monospace;
     background: linear-gradient(to right, tan, tan, black);
     z-index: 1000;
 }
@@ -68,7 +102,7 @@ h1 {
     color: white;
     text-align: center;
     font-size: 135px;
-    font-family: 'Ink Free', 'Bradley Hand ITC', Courier, monospace;
+    font-family: 'Caveat', 'Bradley Hand ITC', Courier, monospace;
     font-weight: bold;
     text-shadow: 5px 5px crimson;
     padding-left: 100px;
@@ -82,7 +116,7 @@ h4 {
 }
 
 h4 {
-    font-family: 'Ink Free', 'Bradley Hand ITC', Courier, monospace;
+    font-family: 'Caveat', 'Bradley Hand ITC', Courier, monospace;
     font-size: 25px;
     text-shadow: 4px 4px black;
 }
@@ -103,7 +137,7 @@ h3 {
     font-weight: bold;
     text-shadow: 5px 5px crimson;
     font-size: 60px;
-    font-family: 'Ink Free', 'Bradley Hand ITC', Courier, monospace;
+    font-family: 'Caveat', 'Bradley Hand ITC', Courier, monospace;
     padding-left: 25px;
     padding-top: 150px;
     opacity: .5;
@@ -111,9 +145,9 @@ h3 {
 
 
 .title {
-    color: black;
+    color: rgb(236, 212, 73);
     font-weight: bold;
-    text-align: center;
+    text-align: left;
     padding-top: 0px;
     padding-right: 0px;
     padding-left: 0px;
@@ -136,7 +170,7 @@ h3 {
 }
 
 .abouttext {
-    font-family: 'Ink Free', 'Bradley Hand ITC', Courier, monospace;
+    font-family: 'Caveat', 'Bradley Hand ITC', Courier, monospace;
     text-align: center;
     font-size: 28px;
     padding-left: 20px;
@@ -152,6 +186,13 @@ h3 {
     flex-wrap: wrap;
     border: 4px maroon solid;
     justify-content: space-around;
+    object-fit: center;
+    padding-bottom: 64px;
+}
+
+img{
+    background-position: cover;
+    object-fit: cover;
 }
 
 section {
@@ -161,8 +202,7 @@ section {
 }
 
 
-
-/* FLIP CARDS: NOTE - The flip cards are definitely glitchy. I had to make a ton of special adaptations to get them to work at all. When all is said and done, in order to prevent text from showing through the pictures from one side to the other, I had to add an opacity transition so that whichever side was away from the viewer would fade out. I tried for about 3 hours to fix it. Fail... */
+/* FLIP CARDS: NOTE - The base for flip cards is definitely glitchy. I had to make a ton of special adaptations to get them to work at all. When all is said and done, in order to prevent text from showing through the pictures from one side to the other in FireFox, I had to add an opacity transition so that whichever side was away from the viewer would fade out. I tried for about 3 hours to fix it. Fail... */
 
 /* FLIP CARD EXAMPLE */
 
@@ -250,7 +290,8 @@ The flip card image/background size must be made to match. Done inline in this c
 }
 
 /*Currently, used to add a row of flippy flex boxes to our menu.*/
-.flex-flippy {
+/* Now broken into 2 parts so we have one for da people, and for da puppies. */
+.flex-flippy1, .flex-flippy2 {
     padding: 5%;
     display: flex;
     flex-direction: row;
@@ -261,23 +302,19 @@ The flip card image/background size must be made to match. Done inline in this c
 }
 
 footer {
-    position: fixed;
+    position: fixed; /* Now the footer stays put, just like you asked, ma'am. */
     bottom: 0;
-    text-align: center;
-    font-size: 28px;
+    text-align: left;
+    font-size: 1.5rem;
     font-weight: bold;
-    font-family: 'Ink Free', 'Bradley Hand ITC', Courier, monospace;
+    font-family: 'Caveat', 'Bradley Hand ITC', Courier, monospace;
     width: 100%;
-    background: linear-gradient(to right, black, tan, tan);
     min-width: 396px;
 }
 
 .contactus {
     padding-top: 0px;
 }
-
-
-
 
 @keyframes tada {
     from {
