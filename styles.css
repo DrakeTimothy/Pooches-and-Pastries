@@ -264,7 +264,6 @@ The flip card image/background size must be made to match. Done inline in this c
     color: rgb(255, 60, 0);
     text-shadow: 1px 1px 2px white, -1px -1px 2px white;
     backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
     font-size: 1em;
     font-family: Arial, Helvetica, sans-serif;
     /* Supposedly this is for Safari. Firefox...is just a nightmare that refuses to play nice. */
