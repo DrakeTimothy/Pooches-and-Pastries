@@ -1,4 +1,9 @@
-/* z-index = 1 (11/28/22 1:17 pm) */
+/* HIGHLIGHTS 
+
+
+
+*/
+/* z-index = 1 -  (11/28/22 1:17 pm) */
 /* Changes made 11/29/22 (TD): Due to google font "caveat" not loading as quickly as the rest of the page, the whole index.html page displayed with one font before snapping to 'caveat'. I found a similar font that is standard to Windows and used it instead to make it instantly available to the browser in all instances. This should (SHOULD) apply to all browsers, desktop, laptop, and phone. 
 
 Finally got the footer to stick to the bottom of the page by replacing "margin-bottom:0%;" with "bottom:0%;"
@@ -57,7 +62,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 50vh;
+    height: 50%;
     height: max-content;
 }
 
@@ -67,8 +72,8 @@ body{
     background-image: url(pexels-nicole-michalou-5775050.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
-    height: 100vh;
+    background-position: center bottom;
+    background-position-y: -100px;
     height: max-content;
 }
 
@@ -292,6 +297,8 @@ The flip card image/background size must be made to match. Done inline in this c
 /* Now broken into 2 parts so we have one for da people, and for da puppies. */
 .flex-flippy1, .flex-flippy2 {
     padding: 5%;
+    padding-top: 8%;
+    padding-bottom: 8%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
