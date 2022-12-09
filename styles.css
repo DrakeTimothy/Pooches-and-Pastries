@@ -1,9 +1,15 @@
 /* HIGHLIGHTS 
 
-
+Melissa is awesome.
+So's Timothy.
+Fully Responsive.
+Use of @Media to keep the site friendly on any device.
+Fade in upon first entry to the Home (index.html) Page.
+A second index page (index2.html) used to keep the animation on the home page from repeating unless accessed from a browser search.
+Flip cards with text that fades with the flip.
 
 */
-/* z-index = 1 -  (11/28/22 1:17 pm) */
+
 /* Changes made 11/29/22 (TD): Due to google font "caveat" not loading as quickly as the rest of the page, the whole index.html page displayed with one font before snapping to 'caveat'. I found a similar font that is standard to Windows and used it instead to make it instantly available to the browser in all instances. This should (SHOULD) apply to all browsers, desktop, laptop, and phone. 
 
 Finally got the footer to stick to the bottom of the page by replacing "margin-bottom:0%;" with "bottom:0%;"
@@ -25,12 +31,14 @@ Created a second background to the menu page. Doggies first of course, but neede
 }
 
 .about_background {
-    background-image: linear-gradient(rgb(167, 100, 61),tan)
+    background-image: linear-gradient(rgb(167, 100, 61), tan)
 }
 
-body{
-    min-width: 396px; /* (TD 11/29) This makes it so the window never gets so narrow it cuts off the menu boxes. I kept it static for all pages.*/
+body {
+    min-width: 396px;
+    /* (TD 11/29) This makes it so the window never gets so narrow it cuts off the menu boxes. I kept it static for all pages.*/
 }
+
 .bodyhome {
     background-size: cover;
     background-color: rgb(173, 150, 120);
@@ -38,18 +46,21 @@ body{
 }
 
 /* Hi Melissa. This class is what I created in order to get the first image to fade-in.*/
-.reveal { /* For index.html, not index2.html. See below explanation.*/
-    background-image: url(images/dog-licking.jpg); 
+.reveal {
+    /* For index.html, not index2.html. See below explanation.*/
+    background-image: url(images/dog-licking.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 100vh;
-    animation: tada 10s; /* I named the animation 'TADA', because...IT'S MAGIC! Anyhow, tada is the name of the variable, and I assigned it a 10 second reveal.*/
-    animation-iteration-count: 1; /* The animation only plays once, but since it plays every time you refresh the screen, I've gone ahead and added a second index.html to load in its place so people don't always have to wait for the animation. Now - that DOES mean any changes you make to one index must also be made to the other.*/
+    animation: tada 10s;
+    /* I named the animation 'TADA', because...IT'S MAGIC! Anyhow, tada is the name of the variable, and I assigned it a 10 second reveal.*/
+    animation-iteration-count: 1;
+    /* The animation only plays once, but since it plays every time you refresh the screen, I've gone ahead and added a second index.html to load in its place so people don't always have to wait for the animation. Now - that DOES mean any changes you make to one index must also be made to the other.*/
 }
 
 .reveal_no_anim {
-    background-image: url(images/dog-licking.jpg); 
+    background-image: url(images/dog-licking.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -57,23 +68,22 @@ body{
 }
 
 /* Background for puppy parfet. */
-.bodymenu .flex-flippy1{
+.bodymenu .outer1 {
     background-image: url(images/bulldog-donut.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 50%;
     height: max-content;
 }
 
 
 /* Needed a different background for human fare, so here 'tis! */
-.bodymenu .flex-flippy2{
-    background-image: url(pexels-nicole-michalou-5775050.jpg);
+.bodymenu .outer2 {
+    background-image: url(images/pexels-nicole-michalou-5775050.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center bottom;
-    background-position-y: -100px;
+    background-position-y: -175px;
     height: max-content;
 }
 
@@ -110,7 +120,16 @@ h1 {
     font-family: 'Caveat', 'Bradley Hand ITC', Courier, monospace;
     font-weight: bold;
     text-shadow: 5px 5px crimson;
-    padding-left: 100px;
+    opacity: .5;
+}
+
+.fare {
+    color: black;
+    text-align: center;
+    font-size: 135px;
+    font-family: 'Caveat', 'Bradley Hand ITC', Courier, monospace;
+    font-weight: bold;
+    text-shadow: 5px 5px crimson;
     opacity: .5;
 }
 
@@ -125,6 +144,7 @@ h4 {
     font-size: 25px;
     text-shadow: 4px 4px black;
 }
+
 
 h2 {
     padding-bottom: 5px;
@@ -168,10 +188,11 @@ h3 {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    box-sizing: border-box;
     border: 4px maroon solid;
-    margin-left: 20px;
-    margin-right: 20px;
     background-color: rgb(173, 150, 120);
+    padding: .5%;
+    margin: .5%;
 }
 
 .abouttext {
@@ -191,11 +212,29 @@ h3 {
     flex-wrap: wrap;
     border: 4px maroon solid;
     justify-content: space-around;
+    box-sizing: border-box;
     object-fit: center;
-    padding-bottom: 64px;
+    padding: .5%;
+    margin: .5%;
 }
 
-img{
+.patrons {
+    font-family: 'Caveat', 'Bradley Hand ITC', Courier, monospace;
+    text-align: center;
+    font-size: 2em;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: crimson;
+    text-shadow: 1px 1px black;
+}
+
+.outer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2%;
+}
+
+img {
     background-position: cover;
     object-fit: cover;
 }
@@ -295,10 +334,10 @@ The flip card image/background size must be made to match. Done inline in this c
 
 /*Currently, used to add a row of flippy flex boxes to our menu.*/
 /* Now broken into 2 parts so we have one for da people, and for da puppies. */
-.flex-flippy1, .flex-flippy2 {
+.flex-flippy1,
+.flex-flippy2 {
     padding: 5%;
-    padding-top: 8%;
-    padding-bottom: 8%;
+    padding-top: 2%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -308,8 +347,11 @@ The flip card image/background size must be made to match. Done inline in this c
 }
 
 footer {
-    position: fixed; /* Now the footer stays put, just like you asked, ma'am. */
+    position: fixed;
+    /* Now the footer stays put, just like you asked, ma'am. */
     bottom: 0;
+    margin-bottom: .5%;
+    margin-left: .5%;
     text-align: left;
     font-size: 1.5rem;
     font-weight: bold;
@@ -322,6 +364,7 @@ footer {
     padding-top: 0px;
 }
 
+/* This is the fading animation. */
 @keyframes tada {
     from {
         opacity: 0;
@@ -329,5 +372,19 @@ footer {
 
     to {
         opacity: 1;
+    }
+}
+
+@media (max-width: 1100px) {
+    .bodymenu .outer2 {
+        position: relative;
+        background-position: center top;
+        background-position-y: 0px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .aboutcontainer {
+        flex-direction: column;
     }
 }
