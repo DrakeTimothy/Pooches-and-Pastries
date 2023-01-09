@@ -1,4 +1,16 @@
-/* z-index = 1 (11/28/22 1:17 pm) */
+/* HIGHLIGHTS 
+
+Melissa is awesome.
+So's Timothy.
+Fully Responsive.
+Use of @Media to keep the site friendly on any device.
+Fade in upon first entry to the Home (index.html) Page.
+A second index page (index2.html) used to keep the animation on the home page from repeating unless accessed from a browser search.
+Flip cards with text that fades with the flip.
+CSS organized alphabetically.
+
+*/
+
 /* Changes made 11/29/22 (TD): Due to google font "caveat" not loading as quickly as the rest of the page, the whole index.html page displayed with one font before snapping to 'caveat'. I found a similar font that is standard to Windows and used it instead to make it instantly available to the browser in all instances. This should (SHOULD) apply to all browsers, desktop, laptop, and phone. 
 
 Finally got the footer to stick to the bottom of the page by replacing "margin-bottom:0%;" with "bottom:0%;"
@@ -19,68 +31,8 @@ Created a second background to the menu page. Doggies first of course, but neede
     margin: 0;
 }
 
-.about_background {
-    background-image: linear-gradient(rgb(167, 100, 61),tan)
-}
-
-body{
-    min-width: 396px; /* (TD 11/29) This makes it so the window never gets so narrow it cuts off the menu boxes. I kept it static for all pages.*/
-}
-.bodyhome {
-    background-size: cover;
-    background-color: rgb(173, 150, 120);
-    height: 100%;
-}
-
-/* Hi Melissa. This class is what I created in order to get the first image to fade-in.*/
-.reveal { /* For index.html, not index2.html. See below explanation.*/
-    background-image: url(images/dog-licking.jpg); 
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    animation: tada 10s; /* I named the animation 'TADA', because...IT'S MAGIC! Anyhow, tada is the name of the variable, and I assigned it a 10 second reveal.*/
-    animation-iteration-count: 1; /* The animation only plays once, but since it plays every time you refresh the screen, I've gone ahead and added a second index.html to load in its place so people don't always have to wait for the animation. Now - that DOES mean any changes you make to one index must also be made to the other.*/
-}
-
-.reveal_no_anim {
-    background-image: url(images/dog-licking.jpg); 
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-}
-
-/* Background for puppy parfet. */
-.bodymenu .flex-flippy1{
-    background-image: url(images/bulldog-donut.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 50vh;
-    height: max-content;
-}
-
-
-/* Needed a different background for human fare, so here 'tis! */
-.bodymenu .flex-flippy2{
-    background-image: url(pexels-nicole-michalou-5775050.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    height: max-content;
-}
-
-.navcontainer {
-    background-color: rgb(173, 150, 120);
-    padding: 10px;
-    font-size: 30px;
-    text-align: center;
-    font-weight: bold;
-    font-family: 'Caveat', 'Bradley Hand ITC', Courier, monospace;
-    background: linear-gradient(to right, tan, tan, black);
-    z-index: 1000;
+a:hover {
+    color: white;
 }
 
 a:link {
@@ -94,63 +46,20 @@ a:visited {
     color: crimson;
 }
 
-a:hover {
-    color: white;
+
+.about_background {
+    background-image: linear-gradient(rgb(167, 100, 61), tan)
 }
 
-h1 {
-    color: white;
-    text-align: center;
-    font-size: 135px;
-    font-family: 'Caveat', 'Bradley Hand ITC', Courier, monospace;
-    font-weight: bold;
-    text-shadow: 5px 5px crimson;
-    padding-left: 100px;
-    opacity: .5;
-}
-
-h2,
-h3,
-h4 {
-    color: white;
-}
-
-h4 {
-    font-family: 'Caveat', 'Bradley Hand ITC', Courier, monospace;
-    font-size: 25px;
-    text-shadow: 4px 4px black;
-}
-
-h2 {
-    padding-bottom: 5px;
-    padding-top: 20px;
-    text-shadow: 4px 4px black;
-}
-
-h3 {
-    text-shadow: 4px 4px crimson;
-}
-
-
-.motto {
-    color: white;
-    font-weight: bold;
-    text-shadow: 5px 5px crimson;
-    font-size: 60px;
-    font-family: 'Caveat', 'Bradley Hand ITC', Courier, monospace;
-    padding-left: 25px;
-    padding-top: 150px;
-    opacity: .5;
-}
-
-
-.title {
-    color: rgb(236, 212, 73);
-    font-weight: bold;
-    text-align: left;
-    padding-top: 0px;
-    padding-right: 0px;
-    padding-left: 0px;
+.aboutcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+    border: 4px maroon solid;
+    background-color: rgb(173, 150, 120);
+    padding: .5%;
+    margin: .5%;
 }
 
 .aboutusheading {
@@ -158,15 +67,15 @@ h3 {
     color: black;
 }
 
-
-.aboutcontainer {
+.aboutphotos {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    flex-wrap: wrap;
     border: 4px maroon solid;
-    margin-left: 20px;
-    margin-right: 20px;
-    background-color: rgb(173, 150, 120);
+    justify-content: space-around;
+    box-sizing: border-box;
+    padding: .5%;
+    margin: .5%;
 }
 
 .abouttext {
@@ -180,19 +89,160 @@ h3 {
     text-shadow: 1px 1px black;
 }
 
-.aboutphotos {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    border: 4px maroon solid;
-    justify-content: space-around;
-    object-fit: center;
-    padding-bottom: 64px;
+
+body {
+    min-width: 396px;
+    /* (TD 11/29) This makes it so the window never gets so narrow it cuts off the menu boxes. I kept it static for all pages.*/
 }
 
-img{
-    background-position: cover;
-    object-fit: cover;
+.bodyhome {
+    background-size: cover;
+    background-color: rgb(173, 150, 120);
+    height: 100%;
+}
+
+/* Background for puppy parfet. */
+.bodymenu .outer1 {
+    background-image: url(images/bulldog-donut.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: max-content;
+}
+
+/* Needed a different background for human fare, so here 'tis! */
+.bodymenu .outer2 {
+    background-image: url(images/pexels-nicole-michalou-5775050.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    background-position-y: -175px;
+    height: max-content;
+}
+
+
+.contactus {
+    padding-top: 0px;
+}
+
+.fare {
+    color: black;
+    text-align: center;
+    font-size: 135px;
+    font-family: 'Caveat', 'Bradley Hand ITC', Courier, monospace;
+    font-weight: bold;
+    text-shadow: 5px 5px crimson;
+    opacity: .5;
+}
+
+footer {
+    position: fixed;
+    /* Now the footer stays put, just like you asked, ma'am. */
+    bottom: 0;
+    margin-bottom: .5%;
+    margin-left: .5%;
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Caveat', 'Bradley Hand ITC', Courier, monospace;
+    width: 100%;
+    min-width: 396px;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 135px;
+    font-family: 'Caveat', 'Bradley Hand ITC', Courier, monospace;
+    font-weight: bold;
+    text-shadow: 5px 5px crimson;
+    opacity: .5;
+}
+
+h2 {
+    padding-bottom: 5px;
+    padding-top: 20px;
+    text-shadow: 4px 4px black;
+}
+
+h2,
+h3,
+h4 {
+    color: white;
+}
+
+h3 {
+    text-shadow: 4px 4px crimson;
+}
+
+h4 {
+    font-family: 'Caveat', 'Bradley Hand ITC', Courier, monospace;
+    font-size: 25px;
+    text-shadow: 4px 4px black;
+}
+
+img {
+    object-fit:cover;
+}
+
+.motto {
+    color: white;
+    font-weight: bold;
+    text-shadow: 5px 5px crimson;
+    font-size: 60px;
+    font-family: 'Caveat', 'Bradley Hand ITC', Courier, monospace;
+    padding-left: 25px;
+    padding-top: 150px;
+    opacity: .5;
+}
+
+.navcontainer {
+    background-color: rgb(173, 150, 120);
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Caveat', 'Bradley Hand ITC', Courier, monospace;
+    background: linear-gradient(to right, tan, tan, black);
+    z-index: 1000;
+}
+
+/* Hi Melissa. This class is what I created in order to get the first image to fade-in.*/
+.reveal {
+    /* For index.html, not index2.html. See below explanation.*/
+    background-image: url(images/dog-licking.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    animation: tada 10s;
+    /* I named the animation 'TADA', because...IT'S MAGIC! Anyhow, tada is the name of the variable, and I assigned it a 10 second reveal.*/
+    animation-iteration-count: 1;
+    /* The animation only plays once, but since it plays every time you refresh the screen, I've gone ahead and added a second index.html to load in its place so people don't always have to wait for the animation. Now - that DOES mean any changes you make to one index must also be made to the other.*/
+}
+
+.reveal_no_anim {
+    background-image: url(images/dog-licking.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.outer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2%;
+}
+
+.patrons {
+    font-family: 'Caveat', 'Bradley Hand ITC', Courier, monospace;
+    text-align: center;
+    font-size: 2em;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: crimson;
+    text-shadow: 1px 1px black;
 }
 
 section {
@@ -200,6 +250,17 @@ section {
     margin-left: 20px;
     margin-right: 20px;
 }
+
+.title {
+    color: rgb(236, 212, 73);
+    font-weight: bold;
+    text-align: left;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+/* -------------------------------FLIP CARDS-------------------------------- */
 
 
 /* FLIP CARDS: NOTE - The base for flip cards is definitely glitchy. I had to make a ton of special adaptations to get them to work at all. When all is said and done, in order to prevent text from showing through the pictures from one side to the other in FireFox, I had to add an opacity transition so that whichever side was away from the viewer would fade out. I tried for about 3 hours to fix it. Fail... */
@@ -243,7 +304,6 @@ The flip card image/background size must be made to match. Done inline in this c
     transform: rotateY(180deg);
 }
 
-
 /* This is so that, if the picture doesn't show, the other side of the card will still function. */
 .flip-card-image p {
     text-align: left;
@@ -279,7 +339,6 @@ The flip card image/background size must be made to match. Done inline in this c
     opacity: 5%;
 }
 
-
 /* This positions the front and back inside the flip-card-inner class, which is inside the flip-card class. */
 .flip-card-text,
 .flip-card-image {
@@ -290,8 +349,10 @@ The flip card image/background size must be made to match. Done inline in this c
 
 /*Currently, used to add a row of flippy flex boxes to our menu.*/
 /* Now broken into 2 parts so we have one for da people, and for da puppies. */
-.flex-flippy1, .flex-flippy2 {
+.flex-flippy1,
+.flex-flippy2 {
     padding: 5%;
+    padding-top: 2%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -300,21 +361,7 @@ The flip card image/background size must be made to match. Done inline in this c
     gap: 20px 2.5%;
 }
 
-footer {
-    position: fixed; /* Now the footer stays put, just like you asked, ma'am. */
-    bottom: 0;
-    text-align: left;
-    font-size: 1.5rem;
-    font-weight: bold;
-    font-family: 'Caveat', 'Bradley Hand ITC', Courier, monospace;
-    width: 100%;
-    min-width: 396px;
-}
-
-.contactus {
-    padding-top: 0px;
-}
-
+/* This is the fading animation. */
 @keyframes tada {
     from {
         opacity: 0;
@@ -322,5 +369,19 @@ footer {
 
     to {
         opacity: 1;
+    }
+}
+
+@media (max-width: 1100px) {
+    .bodymenu .outer2 {
+        position: relative;
+        background-position: center top;
+        background-position-y: 0px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .aboutcontainer {
+        flex-direction: column;
     }
 }
